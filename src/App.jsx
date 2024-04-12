@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import GetWeather from './components/GetWeather';
+import Weather from './components/Weather';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      WeatherTracker
-    </>
-  )
+    <BrowserRouter>
+    <Routes>
+      <Route path ="/" exact element ={<GetWeather />}></Route>
+      <Route path ="/weather" exact element ={<Weather />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
